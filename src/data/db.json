@@ -1,0 +1,126 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"nombre": "Helado Tricolor Peziedu",
+			"image": "../../public/helados/HeladoTricolorPeziedu.png",
+			"fechaRegistro": "25/05/2022",
+			"insumos": [
+				{
+					"id": 1,
+					"insumoOne": "aceite vegetal",
+					"cantidad": 2,
+					"unidad": "litros"
+				},
+				{
+					"id": 2,
+					"insumoOne": "chispas",
+					"cantidad": 2.5,
+					"unidad": "gramos"
+				},
+				{
+					"id": 3,
+					"insumoOne": "aceite vegetal",
+					"cantidad": 1.7,
+					"unidad": "litros"
+				},
+				{
+					"id": 3,
+					"insumoOne": "Harina",
+					"cantidad": 4,
+					"unidad": "Kilogamos"
+				},
+				{
+					"id": 4,
+					"insumoOne": "Cacao",
+					"cantidad": 0.4,
+					"unidad": "gramos"
+				},
+				{
+					"id": 4,
+					"insumoOne": "Envoltura plastica",
+					"cantidad": 10,
+					"unidad": "Kilogramos"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"nombre": "Sublime",
+			"image": "../../public/helados/sublime.png",
+			"fechaRegistro": "19/05/2022",
+			"insumos": [
+				{
+					"id": 1,
+					"insumoOne": "huevos",
+					"cantidad": 2,
+					"unidad": "litros"
+				},
+				{
+					"id": 2,
+					"insumoOne": "agua",
+					"cantidad": 3,
+					"unidad": "litros"
+				},
+				{
+					"id": 3,
+					"insumoOne": "lechecondensada",
+					"cantidad": 3,
+					"unidad": "litros"
+				},
+				{
+					"id": 3,
+					"insumoOne": "cacao",
+					"cantidad": 2,
+					"unidad": "kilogramos"
+				},
+				{
+					"id": 4,
+					"insumoOne": "vainilla",
+					"cantidad": 2,
+					"unidad": "kilogramos"
+				}
+			]
+		},
+		{
+			"id": 3,
+			"nombre": "Frio Rico",
+			"image": "../../public/helados/frioRico.jpg",
+			"fechaRegistro": "17/05/2022",
+			"insumos": [
+				{
+					"id": 1,
+					"insumoOne": "huevos",
+					"cantidad": 2,
+					"unidad": "litros"
+				},
+				{
+					"id": 2,
+					"insumoOne": "agua",
+					"cantidad": 3,
+					"unidad": "litros"
+				}
+			]
+		},
+		{
+			"id": 4,
+			"nombre": "Turbo",
+			"image": "../../public/helados/turbo.png",
+			"fechaRegistro": "15/05/2022",
+			"insumos": [
+				{
+					"id": 1,
+					"insumoOne": "huevos",
+					"cantidad": 2,
+					"unidad": "litros"
+				},
+				{
+					"id": 2,
+					"insumoOne": "emulcionante",
+					"cantidad": 1.4,
+					"unidad": "litros"
+				}
+			]
+		}
+	]
+}

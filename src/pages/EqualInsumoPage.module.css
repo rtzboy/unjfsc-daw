@@ -1,0 +1,110 @@
+.wrapper {
+	height: 100vh;
+	background-color: rgb(231, 235, 240);
+	position: relative;
+	padding: 2rem;
+}
+
+.backHome {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+
+.styledlink {
+	width: 80px;
+	height: 40px;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.styledlink:active {
+	font-size: 0.97rem;
+	box-shadow: inset -2.5px -2.5px 5px #fafbff, inset 2.5px 2.5px 5px #a6abbd;
+}
+
+.selectNeu {
+	height: 30px;
+
+	padding: 0 0.8rem;
+
+	background: linear-gradient(
+			317.7deg,
+			rgba(0, 0, 0, 0.4) 0%,
+			rgba(255, 255, 255, 0.4) 105.18%
+		),
+		#e7ebf0;
+	background-blend-mode: soft-light, normal;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	box-shadow: -5px -5px 10px #fafbff, 5px 5px 6px #a6abbd;
+	border-radius: 5px;
+}
+
+/* style left */
+
+.totalBody {
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+
+	display: flex;
+	padding: 1.5rem;
+}
+
+.bodyLeft,
+.bodyRight {
+	width: 50%;
+}
+
+/* left side */
+
+.product,
+.date {
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+
+	margin-bottom: 1.5rem;
+}
+
+.product div {
+	width: 40%;
+}
+
+.dateTitle {
+	width: 40%;
+}
+
+.selectNeu,
+.dateRegister {
+	width: 60%;
+}
+
+/* body data title */
+
+.bodyDataTitle {
+	width: 100%;
+	display: flex;
+	padding: 1rem 0;
+}
+
+.bodyDataTitleTwo,
+.bodyDataTitleThree {
+	text-align: center;
+}
+
+.bodyDataTitleOne {
+	width: 50%;
+}
+.bodyDataTitleTwo {
+	width: 20%;
+}
+
+.bodyDataTitleThree {
+	width: 30%;
+}
+
+.imgProduct {
+	width: 100%;
+}

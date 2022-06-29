@@ -1,0 +1,68 @@
+.wrapper {
+	height: 100vh;
+	background-color: rgb(231, 235, 240);
+	position: relative;
+	padding: 2rem;
+}
+
+.subTitle {
+	margin: 0;
+	padding: 1rem 3rem;
+	text-align: center;
+	line-height: 2rem;
+}
+
+.main {
+	position: relative;
+	width: 80%;
+	display: flex;
+	gap: 2rem;
+
+	margin: 0 auto;
+	padding: 2rem 0;
+}
+
+.links {
+	width: 40%;
+
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+
+	gap: 2rem;
+}
+
+.styledlink {
+	width: 240px;
+	height: 40px;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.styledlink:active {
+	font-size: 0.97rem;
+	box-shadow: inset -2.5px -2.5px 5px #fafbff, inset 2.5px 2.5px 5px #a6abbd;
+}
+
+.imgPage {
+	width: 60%;
+	background: linear-gradient(
+			317.7deg,
+			rgba(0, 0, 0, 0.4) 0%,
+			rgba(255, 255, 255, 0.4) 105.18%
+		),
+		#e7ebf0;
+	background-blend-mode: soft-light, normal;
+	box-shadow: -15px -15px 30px #fafbff, 5px 5px 15px #a6abbd;
+	border-radius: 10px;
+}
+
+.imgPage img {
+	width: 100%;
+}
+
+.footer {
+	font-size: 0.9rem;
+	color: rgb(110, 110, 110);
+}
