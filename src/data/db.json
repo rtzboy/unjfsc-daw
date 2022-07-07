@@ -2,123 +2,371 @@
 	"products": [
 		{
 			"id": 1,
-			"nombre": "Helado Tricolor Peziedu",
+			"nombre": "Pezi Edu Chocolate",
 			"image": "../../public/helados/HeladoTricolorPeziedu.png",
 			"fechaRegistro": "25/05/2022",
 			"insumos": [
 				{
 					"id": 1,
-					"insumoOne": "aceite vegetal",
-					"cantidad": 2,
-					"unidad": "litros"
+					"insumoOne": "AguaUno",
+					"cantidad": 0.225,
+					"unidad": "L"
 				},
 				{
 					"id": 2,
-					"insumoOne": "chispas",
-					"cantidad": 2.5,
-					"unidad": "gramos"
+					"insumoOne": "Azucar",
+					"cantidad": 0.07,
+					"unidad": "Kg"
 				},
 				{
 					"id": 3,
-					"insumoOne": "aceite vegetal",
-					"cantidad": 1.7,
-					"unidad": "litros"
-				},
-				{
-					"id": 3,
-					"insumoOne": "Harina",
-					"cantidad": 4,
-					"unidad": "Kilogamos"
+					"insumoOne": "Aceite vegetal",
+					"cantidad": 0.01,
+					"unidad": "L"
 				},
 				{
 					"id": 4,
-					"insumoOne": "Cacao",
-					"cantidad": 0.4,
-					"unidad": "gramos"
+					"insumoOne": "Leche descremada",
+					"cantidad": 0.04,
+					"unidad": "Kg"
 				},
 				{
-					"id": 4,
-					"insumoOne": "Envoltura plastica",
-					"cantidad": 10,
-					"unidad": "Kilogramos"
-				}
-			]
-		},
-		{
-			"id": 2,
-			"nombre": "Sublime",
-			"image": "../../public/helados/sublime.png",
-			"fechaRegistro": "19/05/2022",
-			"insumos": [
-				{
-					"id": 1,
-					"insumoOne": "huevos",
-					"cantidad": 2,
-					"unidad": "litros"
+					"id": 5,
+					"insumoOne": "Cacao en polvo",
+					"cantidad": 0.025,
+					"unidad": "Kg"
 				},
 				{
-					"id": 2,
-					"insumoOne": "agua",
-					"cantidad": 3,
-					"unidad": "litros"
+					"id": 6,
+					"insumoOne": "Suero de leche en polvo",
+					"cantidad": 0.05,
+					"unidad": "Kg"
 				},
 				{
-					"id": 3,
-					"insumoOne": "lechecondensada",
-					"cantidad": 3,
-					"unidad": "litros"
+					"id": 7,
+					"insumoOne": "Leche entera en polvo",
+					"cantidad": 0.05,
+					"unidad": "Kg"
 				},
 				{
-					"id": 3,
-					"insumoOne": "cacao",
-					"cantidad": 2,
-					"unidad": "kilogramos"
+					"id": 8,
+					"insumoOne": "Estabilizantes",
+					"cantidad": 0.01,
+					"unidad": "Kg"
 				},
 				{
-					"id": 4,
-					"insumoOne": "vainilla",
-					"cantidad": 2,
-					"unidad": "kilogramos"
+					"id": 9,
+					"insumoOne": "Emulsionante",
+					"cantidad": 0.01,
+					"unidad": "Kg"
+				},
+				{
+					"id": 10,
+					"insumoOne": "Saborizante",
+					"cantidad": 0.01,
+					"unidad": "Kg"
 				}
 			]
 		},
 		{
 			"id": 3,
-			"nombre": "Frio Rico",
-			"image": "../../public/helados/frioRico.jpg",
-			"fechaRegistro": "17/05/2022",
+			"nombre": "Pezi Edu Vainilla",
+			"image": "../../public/helados/HeladoTricolorPeziedu.png",
+			"fechaRegistro": "25/05/2022",
 			"insumos": [
 				{
 					"id": 1,
-					"insumoOne": "huevos",
-					"cantidad": 2,
-					"unidad": "litros"
+					"insumoOne": "AguaDos",
+					"cantidad": 0.225,
+					"unidad": "L"
 				},
 				{
 					"id": 2,
-					"insumoOne": "agua",
-					"cantidad": 3,
-					"unidad": "litros"
+					"insumoOne": "Azucar",
+					"cantidad": 0.075,
+					"unidad": "Kg"
+				},
+				{
+					"id": 3,
+					"insumoOne": "Aceite vegetal",
+					"cantidad": 0.01,
+					"unidad": "L"
+				},
+				{
+					"id": 4,
+					"insumoOne": "Jarabe de glucosa",
+					"cantidad": 0.05,
+					"unidad": "Kg"
+				},
+				{
+					"id": 6,
+					"insumoOne": "Suero de leche en polvo",
+					"cantidad": 0.04,
+					"unidad": "Kg"
+				},
+				{
+					"id": 7,
+					"insumoOne": "Leche descremada en polvo",
+					"cantidad": 0.02,
+					"unidad": "Kg"
+				},
+				{
+					"id": 8,
+					"insumoOne": "Estabilizantes",
+					"cantidad": 0.01,
+					"unidad": "Kg"
+				},
+				{
+					"id": 9,
+					"insumoOne": "Emulsionante",
+					"cantidad": 0.01,
+					"unidad": "Kg"
+				},
+				{
+					"id": 10,
+					"insumoOne": "Saborizante",
+					"cantidad": 0.01,
+					"unidad": "Kg"
+				},
+				{
+					"id": 11,
+					"insumoOne": "Sal",
+					"cantidad": 0.005,
+					"unidad": "Kg"
+				},
+				{
+					"id": 12,
+					"insumoOne": "Colorantes",
+					"cantidad": 0.01,
+					"unidad": "Kg"
 				}
 			]
 		},
 		{
-			"id": 4,
-			"nombre": "Turbo",
-			"image": "../../public/helados/turbo.png",
-			"fechaRegistro": "15/05/2022",
+			"id": 8,
+			"nombre": "Paleta Lucuma",
+			"image": "../../public/helados/HeladoTricolorPeziedu.png",
+			"fechaRegistro": "25/05/2022",
 			"insumos": [
 				{
 					"id": 1,
-					"insumoOne": "huevos",
-					"cantidad": 2,
-					"unidad": "litros"
+					"insumoOne": "AguaTres",
+					"cantidad": 0.054,
+					"unidad": "L"
 				},
 				{
 					"id": 2,
-					"insumoOne": "emulcionante",
-					"cantidad": 1.4,
-					"unidad": "litros"
+					"insumoOne": "Jarabe de glucosa",
+					"cantidad": 0.003,
+					"unidad": "Kg"
+				},
+				{
+					"id": 3,
+					"insumoOne": "Aceite vegetal",
+					"cantidad": 0.004,
+					"unidad": "L"
+				},
+				{
+					"id": 4,
+					"insumoOne": "Fibra soluble de maiz",
+					"cantidad": 0.003,
+					"unidad": "Kg"
+				},
+				{
+					"id": 5,
+					"insumoOne": "Suero de leche en polvo",
+					"cantidad": 0.002,
+					"unidad": "Kg"
+				},
+				{
+					"id": 6,
+					"insumoOne": "Leche descremada en polvo",
+					"cantidad": 0.002,
+					"unidad": "Kg"
+				},
+				{
+					"id": 8,
+					"insumoOne": "Concentrado de proteina en suero",
+					"cantidad": 0.002,
+					"unidad": "Kg"
+				},
+				{
+					"id": 9,
+					"insumoOne": "Saborizante",
+					"cantidad": 0.002,
+					"unidad": "Kg"
+				},
+				{
+					"id": 10,
+					"insumoOne": "Estabilizantes",
+					"cantidad": 0.004,
+					"unidad": "Kg"
+				},
+				{
+					"id": 11,
+					"insumoOne": "Emulsionante",
+					"cantidad": 0.002,
+					"unidad": "Kg"
+				},
+				{
+					"id": 12,
+					"insumoOne": "Pulpa de lucuma",
+					"cantidad": 0.005,
+					"unidad": "Kg"
+				},
+				{
+					"id": 13,
+					"insumoOne": "Harina de lucuma",
+					"cantidad": 0.005,
+					"unidad": "Kg"
+				}
+			]
+		},
+		{
+			"id": 9,
+			"nombre": "Paleta Piña",
+			"image": "../../public/helados/HeladoTricolorPeziedu.png",
+			"fechaRegistro": "25/05/2022",
+			"insumos": [
+				{
+					"id": 1,
+					"insumoOne": "AguaCuatro",
+					"cantidad": 0.054,
+					"unidad": "L"
+				},
+				{
+					"id": 2,
+					"insumoOne": "Jarabe de glucosa",
+					"cantidad": 0.003,
+					"unidad": "Kg"
+				},
+				{
+					"id": 3,
+					"insumoOne": "Aceite vegetal",
+					"cantidad": 0.004,
+					"unidad": "L"
+				},
+				{
+					"id": 4,
+					"insumoOne": "Fibra soluble de maiz",
+					"cantidad": 0.003,
+					"unidad": "Kg"
+				},
+				{
+					"id": 5,
+					"insumoOne": "Suero de leche en polvo",
+					"cantidad": 0.002,
+					"unidad": "Kg"
+				},
+				{
+					"id": 6,
+					"insumoOne": "Leche descremada en polvo",
+					"cantidad": 0.002,
+					"unidad": "Kg"
+				},
+				{
+					"id": 8,
+					"insumoOne": "Concentrado de proteina en suero",
+					"cantidad": 0.002,
+					"unidad": "Kg"
+				},
+				{
+					"id": 9,
+					"insumoOne": "Saborizante",
+					"cantidad": 0.002,
+					"unidad": "Kg"
+				},
+				{
+					"id": 10,
+					"insumoOne": "Estabilizantes",
+					"cantidad": 0.004,
+					"unidad": "Kg"
+				},
+				{
+					"id": 11,
+					"insumoOne": "Emulsionante",
+					"cantidad": 0.002,
+					"unidad": "Kg"
+				},
+				{
+					"id": 12,
+					"insumoOne": "Pulpa de piña",
+					"cantidad": 0.005,
+					"unidad": "Kg"
+				},
+				{
+					"id": 13,
+					"insumoOne": "Harina de piña",
+					"cantidad": 0.005,
+					"unidad": "Kg"
+				}
+			]
+		},
+		{
+			"id": 10,
+			"nombre": "Chocolate crocante con mani",
+			"image": "../../public/helados/HeladoTricolorPeziedu.png",
+			"fechaRegistro": "25/05/2022",
+			"insumos": [
+				{
+					"id": 1,
+					"insumoOne": "AguaCinco",
+					"cantidad": 0.015,
+					"unidad": "L"
+				},
+				{
+					"id": 2,
+					"insumoOne": "Cobertura sabor chocolate",
+					"cantidad": 0.005,
+					"unidad": "Kg"
+				},
+				{
+					"id": 4,
+					"insumoOne": "Azucar",
+					"cantidad": 0.008,
+					"unidad": "Kg"
+				},
+				{
+					"id": 5,
+					"insumoOne": "Aceite vegetal",
+					"cantidad": 0.004,
+					"unidad": "Kg"
+				},
+				{
+					"id": 6,
+					"insumoOne": "Mani",
+					"cantidad": 0.003,
+					"unidad": "Kg"
+				},
+				{
+					"id": 7,
+					"insumoOne": "Jarabe de glucosa",
+					"cantidad": 0.003,
+					"unidad": "Kg"
+				},
+				{
+					"id": 8,
+					"insumoOne": "Emulsionante",
+					"cantidad": 0.004,
+					"unidad": "Kg"
+				},
+				{
+					"id": 9,
+					"insumoOne": "Suero de leche en polvo",
+					"cantidad": 0.007,
+					"unidad": "Kg"
+				},
+				{
+					"id": 10,
+					"insumoOne": "Saborizante",
+					"cantidad": 0.005,
+					"unidad": "Kg"
+				},
+				{
+					"id": 11,
+					"insumoOne": "Estabilizante",
+					"cantidad": 0.002,
+					"unidad": "Kg"
 				}
 			]
 		}

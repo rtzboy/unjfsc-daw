@@ -1,2 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
 @import './reset.css';
-@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*@import './fonts.css'; */
+
+@layer components {
+	.neumorph {
+		background: linear-gradient(
+				317.7deg,
+				rgba(0, 0, 0, 0.4) 0%,
+				rgba(255, 255, 255, 0.4) 105.18%
+			),
+			#e7ebf0;
+		background-blend-mode: soft-light, normal;
+		box-shadow: -5px -5px 10px #fafbff, 5px 5px 6px #a6abbd;
+		border-radius: 8px;
+	}
+
+	.mdal {
+		background-color: rgba(115, 115, 115, 0.7);
+	}
+
+	.eff {
+		font-size: 0.97rem;
+		box-shadow: inset -2.5px -2.5px 5px #fafbff, inset 2.5px 2.5px 5px #a6abbd;
+	}
+
+	.efftwo {
+		box-shadow: inset -2.5px -2.5px 5px #fafbff, inset 2.5px 2.5px 5px #a6abbd;
+	}
+
+	.inpt {
+		border-radius: 5px;
+		box-shadow: inset -2.5px -2.5px 5px #fafbff, inset 2.5px 2.5px 5px #a6abbd;
+	}
+
+	.bgneu {
+		background-color: rgb(226, 232, 240);
+	}
+
+	.maxwcon {
+		width: 500px;
+		height: 500px;
+	}
+}
