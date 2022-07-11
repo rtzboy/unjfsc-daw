@@ -23,6 +23,8 @@ const SelectCombo = ({
 		);
 	}
 
+	console.log('xd');
+
 	return (
 		<select
 			onChange={evt => {

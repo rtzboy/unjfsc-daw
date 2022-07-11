@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import HomeIcon from '../components/icons/home';
+import InsumosRow from '../components/InsumosRow';
 import {
 	searchIceCream,
-	searchIceCreamProduct
+	searchIceCreamProduct,
+	searchProductById
 } from '../lib/api/searchIceCream';
 
 const RegistroOrdenes = () => {
 	const [selectOpt, setSelectOpt] = useState();
 	const [recipe, setRecipe] = useState();
+	const [info, setInfo] = useState();
 	const [equal, setEqual] = useState(1);
 
 	useEffect(() => {
@@ -17,6 +20,13 @@ const RegistroOrdenes = () => {
 
 		console.log('use effect');
 	}, []);
+
+	useEffect(() => {
+		if (selectOpt !== undefined) {
+			getRecipeData(setRecipe, getFirstValueArray(selectOpt));
+			getProductById(setInfo, getFirstValueArray(selectOpt));
+		}
+	}, [selectOpt]);
 
 	return (
 		<div className='h-screen bg-slate-200 p-8'>
@@ -33,15 +43,19 @@ const RegistroOrdenes = () => {
 			<div className='p-4 flex gap-3 max-w-6xl mx-auto'>
 				<div className='w-1/2 p-2'>
 					<div className='flex gap-1 p-1 w-full'>
-						<div className='neumorph w-2/5 h-7'>Referencia</div>
+						<div className='neumorph w-2/5 h-7'>Orden</div>
 						<div className='w-3/5'>
-							<input className='inpt px-2 block w-full h-7' type='text' />
+							<input
+								type='text'
+								autoComplete='off'
+								className='inpt px-2 block w-full h-7'
+							/>
 						</div>
 					</div>
 					<div className='flex gap-1 p-1 w-full'>
 						<div className='neumorph w-2/5 h-7'>Fecha Registro</div>
 						<div className='w-3/5'>
-							<input className='inpt px-2 block h-7 w-full' type='date' />
+							<input type='text' className='inpt px-2 block h-7 w-full' />
 						</div>
 					</div>
 					<div className='flex gap-1 p-1 w-full'>
@@ -52,12 +66,13 @@ const RegistroOrdenes = () => {
 									className='inpt pl-1 w-full h-7'
 									onChange={evt => {
 										getRecipeData(setRecipe, evt.target.value);
+										getProductById(setInfo, evt.target.value);
 									}}
 								>
 									{selectOpt &&
 										selectOpt.map(elm => {
 											return (
-												<option key={elm.nombre} value={elm.id}>
+												<option key={elm.id} value={elm.id}>
 													{elm.nombre}
 												</option>
 											);
@@ -69,7 +84,7 @@ const RegistroOrdenes = () => {
 									className='inpt pl-1 block h-7 w-full'
 									min={1}
 									type='number'
-									defaultValue={equal}
+									value={equal}
 									onChange={evt => setEqual(evt.target.value)}
 								/>
 							</div>
@@ -86,18 +101,28 @@ const RegistroOrdenes = () => {
 							</div>
 						</div>
 						<div className='h-[350px] overflow-y-auto bgneu'>
-							{/* <RecipeRow recipe={recipe} equal={equal} /> */}
+							<InsumosRow ingred={recipe} value={equal} bd={true} />
 						</div>
 					</div>
-					<div className='neumorph absolute bottom-10 left-14 px-3 py-1 active:eff'>
-						<button>Grabar</button>
+					<div
+						onClick={evt => {
+							console.log('guardando...');
+							setLocalStoraInfo(equal, info);
+							setTimeout(() => {
+								alert('Registro Exitoso!!');
+								setEqual(1);
+							}, 1000);
+						}}
+						className='neumorph absolute bottom-10 left-14 px-3 py-1 active:eff'
+					>
+						<button>Registar</button>
 					</div>
 					<div className='neumorph absolute bottom-10 left-36 px-3 py-1 active:eff'>
 						<button>Limpiar</button>
 					</div>
 				</div>
 				<div className='w-1/2 p-2 flex justify-center'>
-					<img className='maxwcon' src={recipe && recipe.image} alt='' />
+					<img className='maxwcon' src={info && info.urlimage} alt='' />
 				</div>
 			</div>
 		</div>
@@ -112,6 +137,41 @@ const getSelectData = async setSelectOpt => {
 const getRecipeData = async (setRecipe, id) => {
 	const { success, datos } = await searchIceCreamProduct(id);
 	if (success) setRecipe(datos);
+};
+
+const getProductById = async (setInfo, id) => {
+	try {
+		const { success, datos } = await searchProductById(id);
+		if (success) {
+			setInfo(datos);
+		} else {
+			console.log(datos);
+		}
+	} catch (error) {
+		console.log('error');
+	}
+};
+
+const getFirstValueArray = selectOpt => {
+	if (selectOpt === undefined) return;
+	if (selectOpt.length > 0) {
+		const copy = [...selectOpt][0];
+		const id = copy.id;
+		return id;
+	}
+};
+
+const setLocalStoraInfo = (equal, info) => {
+	const { id, nombre, urlimage } = info;
+	const pedidos = JSON.parse(localStorage.getItem('pedidos') || '[]');
+	const pedidosArra = Array.from(pedidos);
+	pedidosArra.push({
+		id,
+		nombre,
+		urlimage,
+		cantidad: equal
+	});
+	localStorage.setItem('pedidos', JSON.stringify(pedidosArra));
 };
 
 export default RegistroOrdenes;

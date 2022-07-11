@@ -9,9 +9,9 @@ const InsumoRow = ({
 	insumo,
 	cantidad,
 	unidad,
-	value,
 	setInsumos,
-	recipe
+	recipe,
+	bd
 }) => {
 	return (
 		<div className='h-8 neumorph flex items-center mb-2'>
@@ -19,7 +19,9 @@ const InsumoRow = ({
 			<div className='w-1/2 px-2'>{insumo}</div>
 			<div className='w-3/12 text-center px-2'>{cantidad}</div>
 			<div className='w-3/12 text-center px-2 flex'>
-				{value <= 1 ? (
+				{bd ? (
+					<div className='w-full'>{unidad}</div>
+				) : (
 					<>
 						<div className='w-1/2'>{unidad}</div>
 						<div className='w-1/2 flex items-center justify-evenly'>
@@ -40,8 +42,6 @@ const InsumoRow = ({
 							</button>
 						</div>
 					</>
-				) : (
-					<div className='w-full'>{unidad}</div>
 				)}
 			</div>
 		</div>

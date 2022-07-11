@@ -1,14 +1,14 @@
-// import { v4 as uuidv4 } from 'uuid';
 import InsumoRow from './InsumoRow';
 
-const InsumosRow = ({ ingred, setInsumos, value = 1 }) => {
+const InsumosRow = ({ ingred, setInsumos, value, bd }) => {
 	if (!ingred) return <p>...</p>;
 
 	if (ingred.length === 0) return <p>Sin insumos que mostrar...</p>;
 
 	const insumos = [...ingred];
 
-	console.log(insumos);
+	console.log(bd);
+	if (!bd) value = 1;
 
 	const filteredRecipe = insumos.map(insumo => {
 		return {
@@ -21,9 +21,9 @@ const InsumosRow = ({ ingred, setInsumos, value = 1 }) => {
 		<InsumoRow
 			key={insumo.id}
 			{...insumo}
-			value={value}
 			setInsumos={setInsumos}
 			recipe={insumos}
+			bd={bd}
 		/>
 	));
 };

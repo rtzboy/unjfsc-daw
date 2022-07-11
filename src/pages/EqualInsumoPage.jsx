@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Add from '../components/icons/add';
 import DeleteIcon from '../components/icons/delete';
 import EditIcon from '../components/icons/edit';
@@ -17,10 +17,19 @@ const EqualInsumoPage = () => {
 	const [productos, setProductos] = useState();
 	const [insumos, setInsumos] = useState();
 	const [info, setInfo] = useState();
+	// const [idInitial, setIdInitial] = useState();
 
 	useEffect(() => {
+		console.log(' - montaje phase');
 		getProduct(setProductos);
 	}, []);
+
+	useEffect(() => {
+		if (productos !== undefined) {
+			getInsumosProduct(setInsumos, getFirstValueArray(productos));
+			getProductById(setInfo, getFirstValueArray(productos));
+		}
+	}, [productos]);
 
 	return (
 		<div className='h-screen relative bg-slate-200 p-8'>
@@ -38,26 +47,30 @@ const EqualInsumoPage = () => {
 			</h2>
 			<div className='p-4 flex gap-3 max-w-6xl mx-auto'>
 				<div className='w-1/2 p-2'>
-					<div className='flex gap-3 p-1 w-full'>
+					<div className='flex gap-2 p-1 w-full'>
 						<div className='neumorph w-1/4 h-7 pl-1'>Producto</div>
-						<div className='w-[50%]'>
-							<SelectCombo
-								productos={productos}
-								getInsumosProduct={getInsumosProduct}
-								getProductById={getProductById}
-								setInsumos={setInsumos}
-								setInfo={setInfo}
-							/>
+						<div className='w-[55%] flex gap-2 justify-between'>
+							<div className='w-[75%]'>
+								<SelectCombo
+									productos={productos}
+									getInsumosProduct={getInsumosProduct}
+									getProductById={getProductById}
+									setInsumos={setInsumos}
+									setInfo={setInfo}
+								/>
+							</div>
+							<div className='w-[25%] flex items-center justify-center inpt bg-white'>
+								{info && info.categoria}
+							</div>
 						</div>
-						<div className='w-[25%] flex justify-evenly'>
-							{info && (
-								<NavLink
-									to={'insert'}
-									className='neumorph px-1 flex justify-evenly items-center active:efftwo'
-								>
-									<Add className='h-5' />
-								</NavLink>
-							)}
+						<div className='w-[20%] flex justify-between'>
+							<NavLink
+								to={'insert'}
+								className='neumorph px-1 flex justify-evenly items-center active:efftwo'
+							>
+								<Add className='h-5' />
+							</NavLink>
+
 							{info && (
 								<NavLink
 									to={'update/' + info.id}
@@ -93,9 +106,9 @@ const EqualInsumoPage = () => {
 							<div className='font-bold p-1 text-center w-3/12'>Unidad</div>
 						</div>
 						<div className='h-[360px] overflow-y-auto bgneu border-2'>
-							<InsumosRow ingred={insumos} setInsumos={setInsumos} />
+							<InsumosRow ingred={insumos} setInsumos={setInsumos} bd={false} />
 						</div>
-						<div className='flex w-[380px] h-11 justify-evenly items-center'>
+						<div className='flex h-11 justify-evenly items-center'>
 							{info && (
 								<NavLink
 									to={'insumo/' + info.id}
@@ -114,7 +127,7 @@ const EqualInsumoPage = () => {
 					<img className='maxwcon' src={info && info.urlimage} alt='' />
 				</div>
 			</div>
-			<Outlet />
+			{/* <Outlet /> */}
 		</div>
 	);
 };
@@ -174,6 +187,15 @@ const postDeleted = (setProductos, productos, id) => {
 	const productFilter = productos.filter(elm => elm.id !== id);
 	console.log(productFilter);
 	setProductos(productFilter);
+};
+
+const getFirstValueArray = productos => {
+	if (productos === undefined) return;
+	if (productos.length > 0) {
+		const copy = [...productos][0];
+		const id = copy.id;
+		return id;
+	}
 };
 
 export default EqualInsumoPage;

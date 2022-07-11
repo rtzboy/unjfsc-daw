@@ -11,7 +11,7 @@ const UpdateProduct = () => {
 	const [input, setInput] = useState({
 		nombre: '',
 		categoria: '',
-		urlimage: '',
+		urlimage: '../../public/helados/',
 		fecharegistro: ''
 	});
 
@@ -28,7 +28,7 @@ const UpdateProduct = () => {
 		>
 			<div className='w-2/6 relative mx-auto mt-24 neumorph h-[430px]'>
 				<h2 className='absolute top-3 left-3 text-lg font-bold'>
-					{id ? `Editando...${id}` : `Agregando..${id}`}
+					{id ? 'Editando...' : 'Agregando..'}
 				</h2>
 				<div className='absolute z-10 right-2 top-2'>
 					<NavLink
@@ -45,13 +45,11 @@ const UpdateProduct = () => {
 							name='nombre'
 							autoComplete='off'
 							value={input.nombre}
+							required
 							onChange={evt =>
 								setInput({
-									id: input.id,
-									nombre: evt.target.value,
-									categoria: input.categoria,
-									urlimage: input.urlimage,
-									fecharegistro: input.fecharegistro
+									...input,
+									nombre: evt.target.value
 								})
 							}
 							className='inpt px-2 w-full h-8'
@@ -62,13 +60,11 @@ const UpdateProduct = () => {
 						<select
 							name='categoria'
 							value={input.categoria}
+							required
 							onChange={evt =>
 								setInput({
-									id: input.id,
-									nombre: input.nombre,
-									categoria: evt.target.value,
-									urlimage: input.urlimage,
-									fecharegistro: input.fecharegistro
+									...input,
+									categoria: evt.target.value
 								})
 							}
 							className='inpt px-2 w-full h-8'
@@ -86,13 +82,11 @@ const UpdateProduct = () => {
 							name='urlimage'
 							autoComplete='off'
 							value={input.urlimage}
+							required
 							onChange={evt =>
 								setInput({
-									id: input.id,
-									nombre: input.nombre,
-									categoria: input.categoria,
-									urlimage: evt.target.value,
-									fecharegistro: input.fecharegistro
+									...input,
+									urlimage: evt.target.value
 								})
 							}
 							className='inpt px-2 w-full h-8'
@@ -104,26 +98,36 @@ const UpdateProduct = () => {
 							name='fecharegistro'
 							autoComplete='off'
 							value={input.fecharegistro}
+							required
 							onChange={evt =>
 								setInput({
-									id: input.id,
-									nombre: input.nombre,
-									categoria: input.categoria,
-									urlimage: input.urlimage,
+									...input,
 									fecharegistro: evt.target.value
 								})
 							}
 							className='inpt px-2 w-full h-8'
 						/>
 					</div>
-					<div className='text-right'>
+					<div className='flex justify-evenly'>
 						<button
 							onClick={evt => {
 								evt.preventDefault();
 								if (id) {
 									updateProductById(id, input);
+									setTimeout(() => {
+										alert('Actualizado correctamente!!');
+									}, 500);
 								} else {
 									insertData(input);
+									setTimeout(() => {
+										alert('Agregado correctamente');
+										setInput({
+											nombre: '',
+											categoria: '',
+											urlimage: '../../public/helados/',
+											fecharegistro: ''
+										});
+									}, 500);
 								}
 							}}
 							type='submit'
@@ -131,7 +135,18 @@ const UpdateProduct = () => {
 						>
 							Guardar
 						</button>
-						<button className='neumorph px-3 py-1 active:efftwo'>
+						<button
+							onClick={evt => {
+								evt.preventDefault();
+								setInput({
+									nombre: '',
+									categoria: '',
+									urlimage: '../../public/helados/',
+									fecharegistro: ''
+								});
+							}}
+							className='neumorph px-3 py-1 active:efftwo'
+						>
 							Limpiar
 						</button>
 					</div>

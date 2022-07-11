@@ -12,9 +12,11 @@ const App = () => (
 		<Routes>
 			<Route path='/' element={<HomePage />} />
 			<Route path='/equivalencia/' element={<EqualInsumoPage />}>
-				<Route path='update/:id' element={<UpdateProduct />} />
-				<Route path='insert' element={<UpdateProduct />} />
+				{/* <Route path='update/:id' element={<UpdateProduct />} />
+				<Route path='insert' element={<UpdateProduct />} /> */}
 			</Route>
+			<Route path='/equivalencia/update/:id' element={<UpdateProduct />} />
+			<Route path='/equivalencia/insert' element={<UpdateProduct />} />
 			<Route path='/registro' element={<RegistroOrdenes />} />
 			<Route path='/envio' element={<EnvioOrdenes />} />
 			<Route path='/equivalencia/insumo/:id' element={<InsumoOpts />} />

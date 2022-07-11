@@ -47,10 +47,8 @@ const InsumoOpts = () => {
 							value={input.insumo}
 							onChange={evt =>
 								setInput({
-									id: input.id,
-									insumo: evt.target.value,
-									cantidad: input.cantidad,
-									unidad: input.unidad
+									...input,
+									insumo: evt.target.value
 								})
 							}
 							className='inpt px-2 w-full h-8'
@@ -64,10 +62,8 @@ const InsumoOpts = () => {
 							value={input.cantidad}
 							onChange={evt =>
 								setInput({
-									id: input.id,
-									insumo: input.insumo,
-									cantidad: evt.target.value,
-									unidad: input.unidad
+									...input,
+									cantidad: evt.target.value
 								})
 							}
 							className='inpt px-2 w-full h-8'
@@ -81,9 +77,7 @@ const InsumoOpts = () => {
 							className='inpt px-2 w-full h-8'
 							onChange={evt =>
 								setInput({
-									id: input.id,
-									insumo: input.insumo,
-									cantidad: input.cantidad,
+									...input,
 									unidad: evt.target.value
 								})
 							}
@@ -95,12 +89,16 @@ const InsumoOpts = () => {
 							<option value='Kgs'>Kgs</option>
 						</select>
 					</div>
-					<div className='text-right'>
+					<div className='flex justify-evenly'>
 						<button
 							type='submit'
 							onClick={evt => {
 								evt.preventDefault();
 								insertRecipeData(input, id);
+								setTimeout(() => {
+									alert('Agregado Correctamente!!');
+									setInput({ insumo: '', cantidad: '', unidad: '' });
+								}, 500);
 							}}
 							className='neumorph px-3 py-1 active:efftwo'
 						>
@@ -111,7 +109,7 @@ const InsumoOpts = () => {
 							className='neumorph px-3 py-1 active:efftwo'
 							type='button'
 						>
-							Clear
+							Limpiar
 						</button>
 					</div>
 				</form>
